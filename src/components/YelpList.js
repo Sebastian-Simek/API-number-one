@@ -5,9 +5,8 @@ import { getYelp } from '../services/fetch-utils';
 
 export default function YelpList() {
   const [yelp, setYelp] = useState([]);
-  const [yelpCity, setYelpCity] = useState('portland');
-  console.log(yelp); //eslint-disable-line
-
+  const [yelpCity, setYelpCity] = useState('Portland');
+  const [{ code }, setError] = useState('');
   
   useEffect(() => {
     doLoad();
@@ -20,8 +19,16 @@ export default function YelpList() {
   }
   
   async function doLoad() {
-    const data = await getYelp(yelpCity);
-    setYelp(data.businesses);
+    const { error, businesses } = await getYelp(yelpCity);
+    if (error) {
+      setError(error);
+      setYelp([]);
+    } else {
+      setYelp(businesses);
+      setError('');
+    }
+    
+    
   }
 
   
@@ -29,9 +36,10 @@ export default function YelpList() {
   return (
     <div className='yelp'>
       <label onSubmit={handleSubmit}> Search City
+        <p>{code}</p>
         <form>
           <input onChange={({ target: { value } }) => setYelpCity(value)} value={yelpCity}/>
-          <button>Submiti</button>
+          <button>Submit</button>
         </form>
       </label>
       {
