@@ -31,7 +31,7 @@ export default function YelpList() {
       <label onSubmit={handleSubmit}> Search City
         <form>
           <input onChange={({ target: { value } }) => setYelpCity(value)} value={yelpCity}/>
-          <button>Submit</button>
+          <button>Submiti</button>
         </form>
       </label>
       {
