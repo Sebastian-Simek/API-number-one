@@ -6,7 +6,7 @@ import { getYelp } from '../services/fetch-utils';
 export default function YelpList() {
   const [yelp, setYelp] = useState([]);
   const [yelpCity, setYelpCity] = useState('portland');
-
+  console.log(yelp); //eslint-disable-line
 
   
   useEffect(() => {
