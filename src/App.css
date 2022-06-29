@@ -40,11 +40,12 @@
   }
 }
 
-.pokemon{
+/* .pokemon{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+  position: relative;
+} */
 
 img{
   width: 100px;

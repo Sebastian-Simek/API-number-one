@@ -3,7 +3,7 @@ import '../App.css';
 import { useEffect, useState } from 'react';
 import { getYelp } from '../services/fetch-utils';
 
-export default function PokemonList() {
+export default function YelpList() {
   const [yelp, setYelp] = useState([]);
   const [yelpCity, setYelpCity] = useState('portland');
 
