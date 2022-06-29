@@ -11,7 +11,7 @@ export default function PokemonList() {
   useEffect(() => {
     doLoad();
     
-  }, []);
+  }, []); //eslint-disable-line
 
   async function handleSubmit(e) {
     e.preventDefault();
