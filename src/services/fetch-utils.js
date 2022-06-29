@@ -9,3 +9,9 @@ export async function getYelp(filter) {
   const data = await rawData.json();
   return data;
 }
+
+export async function getWeatherCoords() {
+  const rawData = await fetch (`/.netlify/functions/weatherCoords?`);
+  const data = await rawData.json();
+  return data;
+}
