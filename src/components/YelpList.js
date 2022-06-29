@@ -7,7 +7,6 @@ export default function PokemonList() {
   const [yelp, setYelp] = useState([]);
   const [yelpCity, setYelpCity] = useState('portland');
 
-  console.log(yelp);
 
   
   useEffect(() => {
