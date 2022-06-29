@@ -12,13 +12,13 @@ export default function PokemonList() {
   useEffect(() => {
     doLoad();
   }, []); //eslint-disable-line
-
+  
   async function handleSubmit(e) {
     e.preventDefault();
     await doLoad();
     setYelpCity('');
   }
-
+  
   async function doLoad() {
     const data = await getYelp(yelpCity);
     setYelp(data.businesses);
