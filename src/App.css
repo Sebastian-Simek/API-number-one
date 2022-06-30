@@ -1,5 +1,8 @@
 .App {
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .App-logo {
@@ -35,4 +38,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* .pokemon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+} */
+
+img{
+  width: 100px;
 }
