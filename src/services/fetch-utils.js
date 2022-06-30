@@ -10,8 +10,14 @@ export async function getYelp(filter) {
   return data;
 }
 
-export async function getWeatherCoords() {
-  const rawData = await fetch (`/.netlify/functions/weatherCoords?`);
+export async function getWeatherCoords(filter) {
+  const rawData = await fetch (`/.netlify/functions/weatherCoords?cityQuery=${filter}`);
+  const data = await rawData.json();
+  return data[0].lon, data[0].lat;
+}
+
+export async function getWeather() {
+  const rawData = await fetch (`/.netlify/functions/weather?`);
   const data = await rawData.json();
   return data;
 }
